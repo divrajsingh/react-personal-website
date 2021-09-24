@@ -1,8 +1,14 @@
 import React from 'react';
+import Main from './Main';
+import {BrowserRouter} from 'react-router-dom'; 
 
 function App() {
   return (
-    <ToDoList/>
+    <>
+      <BrowserRouter>
+        <Main/>
+      </BrowserRouter>
+    </>
   );
 }
 

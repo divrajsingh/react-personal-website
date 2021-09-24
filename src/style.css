@@ -1,0 +1,25 @@
+.nav li {
+    display: inline; 
+    padding: 8px;
+}
+
+.aboutImg {
+    padding-top: 30px; 
+    width: 220px;
+}
+
+.aboutImg img {
+    width: 100%; 
+    height: auto;
+    border-radius: 50%;
+}
+
+.info {
+    padding-left: 60px;
+}
+
+.footer {
+    width: 100%;
+    position: absolute; 
+    bottom: 0; 
+}
