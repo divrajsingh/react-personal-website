@@ -1,3 +1,10 @@
+
+:root {
+    --primary: #FCF3F3;
+    --secondary: black;
+    --accent: #6EDEDC;
+}
+
 .nav li {
     display: inline; 
     padding: 8px;
@@ -22,4 +29,46 @@
     width: 100%;
     position: absolute; 
     bottom: 0; 
+}
+.card {
+    width: 50%;
+    padding: 10px 0px; 
+}
+.content {
+    width: 80%;
+    text-align: left;
+    overflow: hidden;
+    max-height: 0px; 
+    transition: max-height 0.2s ease-out; 
+}
+
+.cardButton {
+    background-color: var(--primary) !important;
+    height: auto;
+    width: 90%;
+    min-width: 250px;
+    border: 0.5px solid grey;
+    text-align: left;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
+    transition: all 0.2s ease-out;
+    cursor: pointer;
+    padding-bottom: 5px;
+    font-family: inherit;
+}
+
+.jobTitle {
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.company {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: rgba(0, 0, 0, .54)!important;
+}
+
+.duration {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: rgba(0, 0, 0, .54)!important;
 }
