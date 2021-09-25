@@ -11,7 +11,7 @@ export function NavBar(props) {
         <>
             <Flex className="navBar" container="flex" justifyContent="space-evenly">
                 <NavLink 
-                    to="/about"  
+                    exact to="/"  
                     activeStyle={style}> About </NavLink>
                 <NavLink 
                     to="/skills" 

@@ -10,7 +10,6 @@ export function Api() {
         const abortController = new AbortController();
         let API_KEY = process.env.REACT_APP_API_KEY;
         //console.log("api key is = " + API_KEY);
-        
         fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`, { signal: abortController.signal})
         .then((response) => response.json())
         .then((data) => {
@@ -22,7 +21,7 @@ export function Api() {
                 console.log("Navigated away - fetch aborted as component was unmounted - " + e.message);
             }
         });
-        
+
         return () => {
             abortController.abort();
         }
