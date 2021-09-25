@@ -1,16 +1,30 @@
 import React from 'react'; 
 import {Flex} from './Flex';
 import '../style.css'
-import {Link} from 'react-router-dom'; 
+import {NavLink} from 'react-router-dom'; 
 export function NavBar(props) {
+    const style = {
+        borderBottom: "2px solid orange",             
+        color: "orange"                        
+    }
     return (
         <>
-            <Flex container="flex" justifyContent="space-evenly">
-                <Link to="/about"> About</Link>
-                <Link to="/skills"> Skills</Link>
-                <Link to="/experience"> Experience</Link>
-                <Link to="/apiPage"> API </Link>
-                <Link to="/contact"> Contact </Link>
+            <Flex className="navBar" container="flex" justifyContent="space-evenly">
+                <NavLink 
+                    to="/about"  
+                    activeStyle={style}> About </NavLink>
+                <NavLink 
+                    to="/skills" 
+                    activeStyle={style}> Skills</NavLink>
+                <NavLink 
+                    to="/experience" 
+                    activeStyle={style}> Experience</NavLink>
+                <NavLink 
+                    to="/apiPage" 
+                    activeStyle={style}> API </NavLink>
+                <NavLink 
+                    to="/contact" 
+                    activeStyle={style}> Contact </NavLink>
             </Flex>
         </>
     )

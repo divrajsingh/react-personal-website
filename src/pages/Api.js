@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react'
 import {Flex} from '../components/Flex'
-require("dotenv").config(); 
 
 export function Api() {
     const [isLoaded, setIsLoaded] = useState(false);
@@ -8,8 +7,8 @@ export function Api() {
     const [mediaUrl, setMediaUrl] = useState('');
 
     useEffect(() => {
-        let API_KEY = process.env.API_KEY;
-        console.log("call made");
+        let API_KEY = process.env.REACT_APP_API_KEY;
+        console.log("api key is ..." + API_KEY);
         fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`)
         .then((response) => response.json())
         .then((data) => {
@@ -26,7 +25,7 @@ export function Api() {
             <Flex>
                 <h2>NASA API - {apiData.title}</h2>
                 <p>The following media is from NASA's <a href="https://apod.nasa.gov/apod/" rel="noreferrer" target="_blank">Astronomy Picture of the Day</a> service</p>
-                <iframe width="960" height="540" src={mediaUrl}> </iframe>
+                <iframe title={apiData.title} width="960" height="540" src={mediaUrl}> </iframe>
             </Flex> 
         )
     } else {
@@ -34,7 +33,7 @@ export function Api() {
             <Flex>
                 <h2>NASA API - {apiData.title}</h2>
                 <p>The following media is from NASA's <a href="https://apod.nasa.gov/apod/" rel="noreferrer" target="_blank">Astronomy Picture of the Day</a> service</p>
-                <img src={mediaUrl}/>
+                <img src={mediaUrl} alt={apiData.title}/>
             </Flex> 
         )
     }
