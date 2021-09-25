@@ -5,7 +5,7 @@ import '../style.css'
 
 export function About() {
     return (
-        <Flex container="flex" justifyContent="center">
+        <Flex className="aboutContainer" container="flex" justifyContent="center" alignItems="center" flexWrap="wrap">
             <div className="aboutImg">
                 <img src={img} alt="me" width="548px" height="455px"/>
             </div>

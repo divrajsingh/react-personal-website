@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react'
-import {Flex} from '../components/Flex'
 
 export function Api() {
     const [isLoaded, setIsLoaded] = useState(false);
@@ -31,19 +30,21 @@ export function Api() {
         return <div>Loading...</div>; 
     } else if (mediaUrl.includes("youtube")) {
         return (
-            <Flex>
+            <div className="apiContainer">
                 <h2>NASA API - {apiData.title}</h2>
-                <p>The following media is from NASA's <a href="https://apod.nasa.gov/apod/" rel="noreferrer" target="_blank">Astronomy Picture of the Day</a> service</p>
+                <p> NASA's <a href="https://apod.nasa.gov/apod/" rel="noreferrer" target="_blank">Astronomy Picture of the Day</a>:</p>
                 <iframe title={apiData.title} width="960" height="540" src={mediaUrl}> </iframe>
-            </Flex> 
+            </div> 
         )
     } else {
         return (
-            <Flex>
+            <div 
+            className="apiContainer"
+            >
                 <h2>NASA API - {apiData.title}</h2>
-                <p>The following media is from NASA's <a href="https://apod.nasa.gov/apod/" rel="noreferrer" target="_blank">Astronomy Picture of the Day</a> service</p>
+                <p>NASA's <a href="https://apod.nasa.gov/apod/" rel="noreferrer" target="_blank">Astronomy Picture of the Day</a>:</p>
                 <img src={mediaUrl} alt={apiData.title}/>
-            </Flex> 
+             </div> 
         )
     }
     

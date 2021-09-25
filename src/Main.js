@@ -7,11 +7,12 @@ import { Route, Redirect, withRouter, useLocation} from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group'
 
 function Main() {
-    /*
-    const routes = [
+    
+    /*const routes = [
         { path: '/about', name: 'About', Component: About },
         { path: '/skills', name: 'Skills', Component: Skills },
-        { path: '/api-page', name: 'API', Component: Api },
+        { path: '/experience', name: 'Experience', Component: Api },
+        { path: '/api-page', name: 'Api', Component: Api },
       ]*/
     let location = useLocation(); 
     return (
@@ -44,20 +45,6 @@ function Main() {
                 </CSSTransition>
               )}      
             </Route>
-            <Route path='/api-page'>
-            {({ match }) => (
-                    <CSSTransition
-                    in={match != null}
-                    timeout={300}
-                    classNames="page"
-                    unmountOnExit
-                    >
-                <div className="page">
-                    <Api/>
-                </div>
-                </CSSTransition>
-              )}      
-            </Route>
             <Route path='/experience'>
             {({ match }) => (
                     <CSSTransition
@@ -68,6 +55,20 @@ function Main() {
                     >
                 <div className="page">
                     <Experience/>
+                </div>
+                </CSSTransition>
+              )}      
+            </Route>
+            <Route path='/api-page'>
+            {({ match }) => (
+                    <CSSTransition
+                    in={match != null}
+                    timeout={300}
+                    classNames="page"
+                    unmountOnExit
+                    >
+                <div className="page">
+                    <Api/>
                 </div>
                 </CSSTransition>
               )}      

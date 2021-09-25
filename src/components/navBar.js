@@ -1,5 +1,4 @@
 import React from 'react'; 
-import {Flex} from './Flex';
 import '../style.css'
 import {NavLink} from 'react-router-dom'; 
 export function NavBar(props) {
@@ -9,7 +8,7 @@ export function NavBar(props) {
     }
     return (
         <>
-            <Flex className="navBar" container="flex" justifyContent="space-evenly">
+            <div className="navBar">
                 <NavLink 
                     exact to="/"  
                     activeStyle={style}> About </NavLink>
@@ -22,7 +21,7 @@ export function NavBar(props) {
                 <NavLink 
                     to="/api-page" 
                     activeStyle={style}> API </NavLink>
-            </Flex>
+            </div>
         </>
     )
 }
