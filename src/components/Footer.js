@@ -7,7 +7,7 @@ export function Footer() {
     return (
         <div className="footer">
             <Flex container="flex" justifyContent="center">
-                <p>Divraj Singh {date.getFullYear()}</p>
+                <p>Made with React | {date.getFullYear()}</p>
             </Flex>
         </div>
     )

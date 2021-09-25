@@ -1,13 +1,17 @@
 import React from 'react';
+import {BrowserRouter as Router} from 'react-router-dom'; 
+import {NavBar} from './components/navBar';
+import {Footer} from './components/Footer';
 import Main from './Main';
-import {BrowserRouter} from 'react-router-dom'; 
 
 function App() {
   return (
     <>
-      <BrowserRouter>
+      <Router>
+        <NavBar/>
         <Main/>
-      </BrowserRouter>
+        <Footer/>
+      </Router>
     </>
   );
 }

@@ -7,15 +7,25 @@ export function Api() {
     const [mediaUrl, setMediaUrl] = useState('');
 
     useEffect(() => {
+        const abortController = new AbortController();
         let API_KEY = process.env.REACT_APP_API_KEY;
-        console.log("api key is ..." + API_KEY);
-        fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`)
+        //console.log("api key is = " + API_KEY);
+        
+        fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`, { signal: abortController.signal})
         .then((response) => response.json())
         .then((data) => {
             setIsLoaded(true); 
             setApiData(data);
             setMediaUrl(data.url);
-        })
+        }).catch((e)=>{
+            if (abortController.signal.aborted) {
+                console.log("Navigated away - fetch aborted as component was unmounted - " + e.message);
+            }
+        });
+        
+        return () => {
+            abortController.abort();
+        }
     }, []); 
 
     if (!isLoaded) {

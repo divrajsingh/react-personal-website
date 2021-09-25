@@ -20,11 +20,8 @@ export function NavBar(props) {
                     to="/experience" 
                     activeStyle={style}> Experience</NavLink>
                 <NavLink 
-                    to="/apiPage" 
+                    to="/api-page" 
                     activeStyle={style}> API </NavLink>
-                <NavLink 
-                    to="/contact" 
-                    activeStyle={style}> Contact </NavLink>
             </Flex>
         </>
     )

@@ -43,6 +43,7 @@ body {
 }
 
 .footer {
+    color: white; 
     background-color: var(--primary);
     width: 100%;
     position: absolute;
