@@ -68,8 +68,53 @@ body {
     text-align: center;
 }
 /* Experience component styles*/ 
+.exp {
+    display: grid; 
+    width: 100%;
+    grid-template-columns: 0.3fr 0.7fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "timeline cardContainer";
+    margin-bottom: 50px; 
+    margin-top: 20px;
+}
+
+.timeline {
+    grid-area: timeline;
+    justify-self: end;
+    padding-right: 40px; 
+    padding-top: 50px;
+
+}
+
+.cardContainer {
+    grid-area: cardContainer; 
+}
+
+.dot {
+    height: 25px;
+    width: 25px;
+    background-color: var(--secondary);
+    border: 3px solid var(--primary);
+    border-radius: 50%;
+    display: block;
+    z-index: 1;
+}
+
+.line {
+    margin-left: 11px;
+    border-left: 3px solid var(--primary);
+    height: 72px;
+    transition: height 0.2s ease-out;
+}
+
+.space {
+    margin-left: 14px;
+    border-left: 3px solid var(--secondary);
+    height: 10px;
+}
+
 .card {
-    width: 50%;
+    width: 80%;
     padding: 10px 0px;
 }
 .content {
