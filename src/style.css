@@ -95,6 +95,10 @@ body h1,h2,h3 {
     bottom: 0;
     text-align: center;
 }
+
+.footer a {
+    color: var(--color4);
+}
 /* Experience component styles*/ 
 .exp {
     display: grid; 
@@ -211,7 +215,7 @@ body h1,h2,h3 {
     color: var(--color4);
 }
 
-#year {
+.accent {
     color: var(--color2);
 }
 

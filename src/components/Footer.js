@@ -5,7 +5,7 @@ export function Footer() {
     const date = new Date()
     return (
         <div className="footer">
-                <p>Github | <span id="year"> {date.getFullYear()} </span></p>
+                <p> <a href="https://github.com/divrajsingh/react-personal-website" rel="noreferrer" target="_blank"> Github</a> | <span class="accent"> {date.getFullYear()} </span></p>
         </div>
     )
 }
