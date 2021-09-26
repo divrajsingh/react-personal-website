@@ -4,8 +4,8 @@ import '../mobileNav.css';
 import {NavLink} from 'react-router-dom'; 
 export function NavBar(props) {
     const style = {
-        borderBottom: "2px solid orange",             
-        color: "orange"                        
+        borderBottom: "2px solid #e07a5f",             
+        color: "#e07a5f"                        
     }
     const navDropdown = useRef();
     const menuContainer = useRef();

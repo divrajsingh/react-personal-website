@@ -5,7 +5,7 @@ export function Footer() {
     const date = new Date()
     return (
         <div className="footer">
-                <p>Github | {date.getFullYear()}</p>
+                <p>Github | <span id="year"> {date.getFullYear()} </span></p>
         </div>
     )
 }

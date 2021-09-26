@@ -1,7 +1,9 @@
 :root {
-    --primary: #1e81b0;
-    --secondary: #e9f2f7;
-    --accent: orange;
+    --color1: #f4f1de;
+    --color2: #e07a5f;
+    --color3: #3d405b;
+    --color4: #81b29a;
+    --color5: #f2cc8f;
 }
 * {
     box-sizing: border-box;
@@ -9,10 +11,15 @@
    
 
 body {
+    color: var(--color5);
+    background-color: var(--color3);
     height: 100%;
     margin: 0;
-    background-color: var(--secondary);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body h1,h2,h3 {
+    color: var(--color4);
 }
 
 #root {
@@ -21,7 +28,7 @@ body {
 }
 
 .navBar {
-    background-color: var(--primary);
+    background-color: var(--color1);
     display: flex; 
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -29,12 +36,12 @@ body {
 .navBar a {
     text-decoration: none;
     padding: 20px;
-    color: white;
+    color: var(--color4);
     font-size: 1.5em;
 }
 
 .navBar a:hover {
-    color: var(--accent);
+    color: var(--color2);
     transition: color 0.3s ease-in;
 }
 
@@ -72,9 +79,17 @@ body {
     padding-left: 60px;
 }
 
+.info a {
+    color: var(--color4);
+}
+
+.info h1 {
+    color: var(--color4)
+}
+
 .footer {
-    color: white; 
-    background-color: var(--primary);
+    color: var(--color4);
+    background-color: var(--color1);
     width: 100%;
     position: fixed;
     bottom: 0;
@@ -106,8 +121,8 @@ body {
 .dot {
     height: 25px;
     width: 25px;
-    background-color: var(--secondary);
-    border: 3px solid var(--primary);
+    background-color: var(--color3);
+    border: 3px solid var(--color4);
     border-radius: 50%;
     display: block;
     z-index: 1;
@@ -115,14 +130,14 @@ body {
 
 .line {
     margin-left: 11px;
-    border-left: 3px solid var(--primary);
+    border-left: 3px solid var(--color4);
     height: 72px;
     transition: height 0.2s ease-out;
 }
 
 .space {
     margin-left: 14px;
-    border-left: 3px solid var(--secondary);
+    border-left: 3px solid var(--color3);
     height: 10px;
 }
 
@@ -131,6 +146,7 @@ body {
     padding: 10px 0px;
 }
 .content {
+    color: var(--color5);
     width: 80%;
     text-align: left;
     overflow: hidden;
@@ -139,11 +155,11 @@ body {
 }
 
 .cardButton {
-    background-color: var(--secondary) !important;
+    background-color: var(--color3);
     height: auto;
     width: 90%;
     min-width: 250px;
-    border: 0.5px solid grey;
+    border: 0.5px solid var(--color2);
     text-align: left;
     box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
     transition: all 0.2s ease-out;
@@ -159,18 +175,20 @@ body {
 .jobTitle {
     font-weight: 700;
     font-size: 0.9rem;
+    color: var(--color4)
 }
 
 .company {
     font-size: 0.9rem;
     font-weight: 400;
-    color: rgba(0, 0, 0, .54)!important;
+    color: var(--color5)!important;
 }
 
 .duration {
     font-size: 0.8rem;
     font-weight: 400;
-    color: rgba(0, 0, 0, .54)!important;
+    color: var(--color5);
+    /*color: rgba(0, 0, 0, .54)!important;*/
 }
 /* API componnent styles */ 
 .apiContainer {
@@ -187,6 +205,14 @@ body {
     max-width: 75%;
     height: auto;
     margin-bottom: 50px;
+}
+
+.apiContainer a {
+    color: var(--color4);
+}
+
+#year {
+    color: var(--color2);
 }
 
 /* React Router transition styles */ 
