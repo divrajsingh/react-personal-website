@@ -12,7 +12,6 @@ export function Experience() {
         //get content div
         let content = e.currentTarget.querySelector('.content');
         let currentLine = "";
-        console.log(e.currentTarget);
         switch(e.currentTarget.id) {
             case "Associate Application Developer": 
                 currentLine = line1;

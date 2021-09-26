@@ -4,9 +4,6 @@ import webIcon from "../img/web.png";
 import dbIcon from "../img/database.png"; 
 import codeIcon from "../img/code.png"; 
 
-
-
-
 export function Subject(props) {
     let src; 
     let style;

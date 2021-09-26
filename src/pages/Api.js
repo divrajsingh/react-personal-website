@@ -41,8 +41,8 @@ export function Api() {
             <div 
             className="apiContainer"
             >
-                <h2>NASA API - {apiData.title}</h2>
-                <p>NASA's <a href="https://apod.nasa.gov/apod/" rel="noreferrer" target="_blank">Astronomy Picture of the Day</a>:</p>
+                <h2>{apiData.title}</h2>
+                <p>API - NASA's <a href="https://apod.nasa.gov/apod/" rel="noreferrer" target="_blank">Astronomy Picture of the Day</a>:</p>
                 <img src={mediaUrl} alt={apiData.title}/>
              </div> 
         )

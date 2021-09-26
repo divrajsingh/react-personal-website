@@ -45,6 +45,19 @@ body {
     top: 22vh;
 }
 
+.aboutContainer {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.skillsContainer {
+    display: flex;
+    justify-content: space-evenly; 
+    flex-wrap: wrap;
+}
+
 .aboutImg {
     width: 220px;
 }
@@ -170,10 +183,9 @@ body {
     margin-bottom: 50px; 
 }
 
-.apod {
-    width: 80%; 
-    height: 60vh; 
-    border: 2px solid black;
+.apiContainer img {
+    max-width: 75%;
+    height: auto;
 }
 
 /* React Router transition styles */ 
@@ -209,3 +221,34 @@ body {
     transition: opacity 300ms, transform 300ms;
   }
   
+  @media only screen and (max-width: 600px) {
+      .info {
+          padding: 0;
+          margin-bottom: 50px;
+          text-align: center;
+      }
+
+      .exp {
+          grid-template-columns: 1fr;
+          grid-template-areas: "cardContainer";
+      }
+      
+      .timeline {
+          display: none;
+      }
+
+      .aboutContainer, .skillsContainer {
+          top: 10vh;
+      }
+
+      .card {
+        width: 100%;
+    }
+    .cardContainer{
+        padding-left: 40px;
+    }
+
+    .apiContainer img {
+        max-width: 90%;
+    }
+  }
