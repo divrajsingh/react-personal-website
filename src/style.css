@@ -186,6 +186,7 @@ body {
 .apiContainer img {
     max-width: 75%;
     height: auto;
+    margin-bottom: 50px;
 }
 
 /* React Router transition styles */ 
@@ -250,5 +251,9 @@ body {
 
     .apiContainer img {
         max-width: 90%;
+    }
+
+    .skillsContainer > div {
+        margin-bottom: 50px;
     }
   }
