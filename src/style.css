@@ -270,6 +270,7 @@ body h1,h2,h3 {
     .exp {
         grid-template-columns: 1fr;
         grid-template-areas: "cardContainer";
+        padding-top: 50px;
     }
     .timeline {
         display: none;
@@ -277,12 +278,13 @@ body h1,h2,h3 {
     .aboutContainer,
     .skillsContainer {
         top: 10vh;
+        padding-top: 50px;
     }
     .card {
         width: 100%;
     }
     .cardContainer {
-        padding-left: 40px;
+        padding-left: 20px;
     }
     .apiContainer img {
         max-width: 90%;
@@ -290,4 +292,10 @@ body h1,h2,h3 {
     .skillsContainer>div {
         margin-bottom: 50px;
     }
+
+    .apiContainer {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
 }
