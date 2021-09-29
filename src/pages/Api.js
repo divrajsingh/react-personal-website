@@ -34,7 +34,7 @@ export function Api() {
                 <h2>{apiData.title}</h2>
                 <p> API - NASA's <a href="https://apod.nasa.gov/apod/" rel="noreferrer" target="_blank">Astronomy Picture of the Day</a>:</p>
                 <div className="embed-container">
-                    <iframe title={apiData.title} src={mediaUrl} allowFullScreen> </iframe>
+                    <iframe title={apiData.title} src={mediaUrl} frameBorder='0' allowFullScreen> </iframe>
                 </div>
             </div> 
         )
