@@ -1,5 +1,8 @@
 .mobileNav {
     display: none;
+    grid-area: navBar;
+    position: sticky; 
+    top: 0;
 }
 
 @media only screen and (max-width: 600px) {  
@@ -9,8 +12,6 @@
     /*Mobile Navigation Bar*/
     .mobileNav {
         display: flex;
-        position: fixed;
-        top: 0;
         width: 100%;
         justify-content: flex-end;
         z-index: 10;
