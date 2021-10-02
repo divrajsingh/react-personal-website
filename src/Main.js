@@ -16,7 +16,7 @@ function Main() {
       ]*/
     let location = useLocation(); 
     return (
-        <div className="container">    
+        <>   
             <Route exact path='/'>
                 {({ match }) => (
                     <CSSTransition
@@ -74,7 +74,7 @@ function Main() {
               )}      
             </Route>
             <Redirect exact to={location.pathname}/>
-        </div>
+        </>
     )
 }
 

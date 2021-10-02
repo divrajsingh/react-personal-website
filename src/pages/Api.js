@@ -27,7 +27,7 @@ export function Api() {
     }, []); 
 
     if (!isLoaded) {
-        return <div>Loading...</div>; 
+        return <div className="apiContainer">Loading...</div>; 
     } else if (mediaUrl.includes("youtube")) {
         return (
             <div className="apiContainer">

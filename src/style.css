@@ -24,11 +24,15 @@ body h1,h2,h3 {
 }
 
 #root {
-    position:relative;
-    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto; 
+    grid-template-areas: "navBar" "container" "footer";
+    min-height: 100vh;
 }
 
 .navBar {
+    grid-area: navBar; 
     background-color: var(--color1);
     display: flex; 
     justify-content: space-evenly;
@@ -47,10 +51,7 @@ body h1,h2,h3 {
 }
 
 .aboutContainer, .skillsContainer {
-    position: absolute;
-    left: 15px;
-    right: 15px;
-    top: 22vh;
+    padding-top: 15%;
 }
 
 .aboutContainer {
@@ -89,12 +90,15 @@ body h1,h2,h3 {
 }
 
 .footer {
+    grid-area: footer;
     color: var(--color4);
     background-color: var(--color1);
     width: 100%;
-    position: fixed;
-    bottom: 0;
     text-align: center;
+    /* fixed footer: 
+    position: fixed; 
+    bottom: 0;
+    */
 }
 
 .footer a {
@@ -209,8 +213,6 @@ body h1,h2,h3 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-bottom: 50px;
-
 }
 /* Following styles taken from https://embedresponsively.com/ */
 .embed-container {
@@ -230,7 +232,7 @@ body h1,h2,h3 {
     height: 100%;
 }
 .apiContainer img {
-    max-width: 75%;
+    max-width: 50%;
     height: auto;
     margin-bottom: 50px;
 }
@@ -246,14 +248,10 @@ body h1,h2,h3 {
 
 /* React Router transition styles */
 
-.container {
-    position: relative;
-}
 
 .page {
-    position: absolute;
-    left: 15px;
-    right: 15px;
+    grid-area: container;
+    align-self: start;
 }
 
 .page-enter {
@@ -279,6 +277,7 @@ body h1,h2,h3 {
 }
 
 @media only screen and (max-width: 600px) {
+
     .info {
         padding: 0;
         margin-bottom: 50px;
@@ -287,32 +286,22 @@ body h1,h2,h3 {
     .exp {
         grid-template-columns: 1fr;
         grid-template-areas: "cardContainer";
-        padding-top: 50px;
     }
     .timeline {
         display: none;
-    }
-    .aboutContainer,
-    .skillsContainer {
-        top: 10vh;
-        padding-top: 50px;
     }
     .card {
         width: 100%;
     }
     .cardContainer {
-        padding-left: 20px;
+        padding-left: 30px;
     }
     .apiContainer img {
         max-width: 90%;
     }
-    .skillsContainer>div {
-        margin-bottom: 50px;
-    }
 
-    .apiContainer {
-        padding-top: 50px;
-        padding-bottom: 50px;
+    .aboutContainer, .skillsContainer {
+        padding-top: 0;
     }
 
 }
