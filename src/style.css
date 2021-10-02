@@ -5,10 +5,10 @@
     --color4: #81b29a;
     --color5: #f2cc8f;
 }
+
 * {
     box-sizing: border-box;
-   }
-   
+}
 
 body {
     color: var(--color5);
@@ -19,25 +19,28 @@ body {
     overflow-x: hidden;
 }
 
-body h1,h2,h3 {
+body h1,
+h2,
+h3 {
     color: var(--color4);
 }
 
 #root {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr auto; 
+    grid-template-rows: auto 1fr auto;
     grid-template-areas: "navBar" "container" "footer";
     min-height: 100vh;
 }
 
 .navBar {
-    grid-area: navBar; 
+    grid-area: navBar;
     background-color: var(--color1);
-    display: flex; 
+    display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
+
 .navBar a {
     text-decoration: none;
     padding: 20px;
@@ -50,12 +53,13 @@ body h1,h2,h3 {
     transition: color 0.3s ease-in;
 }
 
-.aboutContainer, .skillsContainer {
+.aboutContainer,
+.skillsContainer {
     padding-top: 15%;
 }
 
 .aboutContainer {
-    display: flex; 
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
@@ -63,7 +67,7 @@ body h1,h2,h3 {
 
 .skillsContainer {
     display: flex;
-    justify-content: space-evenly; 
+    justify-content: space-evenly;
     flex-wrap: wrap;
 }
 
@@ -214,23 +218,29 @@ body h1,h2,h3 {
     align-items: center;
     flex-direction: column;
 }
+
+
 /* Following styles taken from https://embedresponsively.com/ */
+
 .embed-container {
-    position: relative; 
-    padding-bottom: 56.25%; 
-    height: 0; 
-    overflow: hidden; 
-    max-width: 100%; 
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
     width: 80%;
 }
 
-.embed-container iframe, .embed-container object, .embed-container embed {
-    position: absolute; 
-    top: 0; 
-    left: 0; 
-    width: 100%; 
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
 }
+
 .apiContainer img {
     max-width: 50%;
     height: auto;
@@ -247,7 +257,6 @@ body h1,h2,h3 {
 
 
 /* React Router transition styles */
-
 
 .page {
     grid-area: container;
@@ -277,7 +286,6 @@ body h1,h2,h3 {
 }
 
 @media only screen and (max-width: 600px) {
-
     .info {
         padding: 0;
         margin-bottom: 50px;
@@ -299,9 +307,7 @@ body h1,h2,h3 {
     .apiContainer img {
         max-width: 90%;
     }
-
-    .aboutContainer, .skillsContainer {
-        padding-top: 0;
+    .skillsContainer {
+        height: 100vh;
     }
-
 }
