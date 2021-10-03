@@ -4,7 +4,7 @@ export function Api() {
     const [isLoaded, setIsLoaded] = useState(false);
     const [apiData, setApiData] = useState({}); 
     const [mediaUrl, setMediaUrl] = useState('');
-    const [isError, setIsError] = useState('false');
+    const [isError, setIsError] = useState(false);
 
     function setupLocalStorage() {
         let today = new Date();
