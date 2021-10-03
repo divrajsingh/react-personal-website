@@ -31,8 +31,6 @@ export function Api() {
         console.log("requestUpdateRequired = " + requestUpdateRequired);
         let testDate = new Date().toLocaleString("en-ZA", {timeZone: "America/New_York"});
         console.log("testDate = " + testDate);
-        //console.log("testDate = " + testDate.getFullYear() + "-" + testDate.getMonth() + "-" + testDate.getDate() + " " + testDate.getHours() + ":" + testDate.getMinutes()); 
-
 
         if ((!requestMade || requestUpdateRequired)) {
             console.log("making call");
@@ -71,23 +69,23 @@ export function Api() {
             <p> Please try again later :) </p> 
             </div>
     );
-} else if (mediaUrl.includes("youtube")) {
-    return ( <
-        div className = "apiContainer" >
-        <h2 > { apiData.title } </h2>
-        <p > API - NASA 's <a href="https://apod.nasa.gov/apod/" rel="noreferrer" target="_blank">Astronomy Picture of the Day</a>:</p>
-        <div className = "embed-container" >
-        <iframe title = { apiData.title } src = { mediaUrl } frameBorder = '0' allowFullScreen> </iframe> 
-        </div>
-        </div> 
-    )
-} else {
-    return ( <div className = "apiContainer" >
-        <h2> { apiData.title } </h2> 
-        <p > API - NASA 's <a href="https://apod.nasa.gov/apod/" rel="noreferrer" target="_blank">Astronomy Picture of the Day</a>:</p> 
-        <img src = { mediaUrl } alt = { apiData.title } /> 
-        </div>
-    )
-}
+    } else if (mediaUrl.includes("youtube")) {
+        return ( <
+            div className = "apiContainer" >
+            <h2 > { apiData.title } </h2>
+            <p > API - NASA 's <a href="https://apod.nasa.gov/apod/" rel="noreferrer" target="_blank">Astronomy Picture of the Day</a>:</p>
+            <div className = "embed-container" >
+            <iframe title = { apiData.title } src = { mediaUrl } frameBorder = '0' allowFullScreen> </iframe> 
+            </div>
+            </div> 
+        )
+    } else {
+        return ( <div className = "apiContainer" >
+            <h2> { apiData.title } </h2> 
+            <p > API - NASA 's <a href="https://apod.nasa.gov/apod/" rel="noreferrer" target="_blank">Astronomy Picture of the Day</a>:</p> 
+            <img src = { mediaUrl } alt = { apiData.title } /> 
+            </div>
+        )
+    }
 
 }
