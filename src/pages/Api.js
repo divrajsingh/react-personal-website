@@ -14,7 +14,7 @@ export function Api() {
 
         //get media item from local storage 
         let media_ls = JSON.parse(localStorage.getItem('media'));;
-        //request made is truthy if above item exist
+        //request made is truthy if above item exists
         let requestMade = true && media_ls;
         //API called required if stored media data does not match current day's date
         let storedMediaDate, today, dateNow; 
@@ -25,12 +25,12 @@ export function Api() {
             dateNow = Date.parse(today);
         }
         let requestUpdateRequired = storedMediaDate < dateNow;
-        console.log("storedMediaDate = " + storedMediaDate);
+        /*console.log("storedMediaDate = " + storedMediaDate);
         console.log("dateNow = " + dateNow);
         console.log("requestMade = "+requestMade);
         console.log("requestUpdateRequired = " + requestUpdateRequired);
         let testDate = new Date().toLocaleString("en-ZA", {timeZone: "America/New_York"});
-        console.log("testDate = " + testDate);
+        console.log("testDate = " + testDate);*/
 
         if ((!requestMade || requestUpdateRequired)) {
             console.log("making call");
@@ -70,19 +70,20 @@ export function Api() {
             </div>
     );
     } else if (mediaUrl.includes("youtube")) {
-        return ( <
-            div className = "apiContainer" >
-            <h2 > { apiData.title } </h2>
-            <p > API - NASA 's <a href="https://apod.nasa.gov/apod/" rel="noreferrer" target="_blank">Astronomy Picture of the Day</a>:</p>
+        return ( 
+            <div className = "apiContainer">
+            <h2> { apiData.title } </h2>
+            <p> API - NASA's <a href="https://apod.nasa.gov/apod/" rel="noreferrer" target="_blank">Astronomy Picture of the Day</a>:</p>
             <div className = "embed-container" >
             <iframe title = { apiData.title } src = { mediaUrl } frameBorder = '0' allowFullScreen> </iframe> 
             </div>
             </div> 
         )
     } else {
-        return ( <div className = "apiContainer" >
+        return ( 
+            <div className = "apiContainer" >
             <h2> { apiData.title } </h2> 
-            <p > API - NASA 's <a href="https://apod.nasa.gov/apod/" rel="noreferrer" target="_blank">Astronomy Picture of the Day</a>:</p> 
+            <p> API - NASA's <a href="https://apod.nasa.gov/apod/" rel="noreferrer" target="_blank">Astronomy Picture of the Day</a>:</p> 
             <img src = { mediaUrl } alt = { apiData.title } /> 
             </div>
         )
