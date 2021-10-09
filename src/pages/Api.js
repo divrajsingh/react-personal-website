@@ -15,7 +15,7 @@ export function Api() {
         let media_ls = JSON.parse(localStorage.getItem('media'));;
         //request made is truthy if above item exists
         let requestMade = true && media_ls;
-        //API called required if stored media data does not match current day's date
+        //API called required if stored media data does not match current date
         let storedMediaDate, today, dateNow; 
         if (requestMade) {
             storedMediaDate = Date.parse(media_ls.date);
