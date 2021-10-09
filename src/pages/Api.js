@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 export function Api() {
     const [isLoaded, setIsLoaded] = useState(false);
-    const [apiData, setApiData] = useState({});
-    const [mediaUrl, setMediaUrl] = useState('');
+    const [apiData, setApiData] = useState({url: ''}); //initialise url to empty string
     const [isError, setIsError] = useState(false);
 
 
@@ -16,7 +15,7 @@ export function Api() {
         let media_ls = JSON.parse(localStorage.getItem('media'));;
         //request made is truthy if above item exists
         let requestMade = true && media_ls;
-        //API called required if stored media data does not match current day's date
+        //API called required if stored media data does not match current date
         let storedMediaDate, today, dateNow; 
         if (requestMade) {
             storedMediaDate = Date.parse(media_ls.date);
@@ -25,12 +24,7 @@ export function Api() {
             dateNow = Date.parse(today);
         }
         let requestUpdateRequired = storedMediaDate < dateNow;
-        /*console.log("storedMediaDate = " + storedMediaDate);
-        console.log("dateNow = " + dateNow);
-        console.log("requestMade = "+requestMade);
-        console.log("requestUpdateRequired = " + requestUpdateRequired);
-        let testDate = new Date().toLocaleString("en-ZA", {timeZone: "America/New_York"});
-        console.log("testDate = " + testDate);*/
+        /*printLogsForDebuggingAPI()*/
 
         if ((!requestMade || requestUpdateRequired)) {
             console.log("making call");
@@ -39,7 +33,6 @@ export function Api() {
             .then((data) => {
                 setIsLoaded(true);
                 setApiData(data);
-                setMediaUrl(data.url);
                 localStorage.setItem('media', JSON.stringify(data));
             }).catch((e) => {
                 if (abortController.signal.aborted) {
@@ -51,7 +44,6 @@ export function Api() {
             console.log("API data retrieved from local storage")
             setIsLoaded(true);
             setApiData(media_ls);
-            setMediaUrl(media_ls.url);
         }
 
 
@@ -69,13 +61,13 @@ export function Api() {
             <p> Please try again later :) </p> 
             </div>
     );
-    } else if (mediaUrl.includes("youtube")) {
+    } else if (apiData.url.includes("youtube")) {
         return ( 
             <div className = "apiContainer">
             <h2> { apiData.title } </h2>
             <p> API - NASA's <a href="https://apod.nasa.gov/apod/" rel="noreferrer" target="_blank">Astronomy Picture of the Day</a>:</p>
             <div className = "embed-container" >
-            <iframe title = { apiData.title } src = { mediaUrl } frameBorder = '0' allowFullScreen> </iframe> 
+            <iframe title = { apiData.title } src = { apiData.url } frameBorder = '0' allowFullScreen> </iframe> 
             </div>
             </div> 
         )
@@ -84,9 +76,18 @@ export function Api() {
             <div className = "apiContainer" >
             <h2> { apiData.title } </h2> 
             <p> API - NASA's <a href="https://apod.nasa.gov/apod/" rel="noreferrer" target="_blank">Astronomy Picture of the Day</a>:</p> 
-            <img src = { mediaUrl } alt = { apiData.title } /> 
+            <img src = { apiData.url } alt = { apiData.title } /> 
             </div>
         )
     }
 
 }
+
+/*function printLogsForDebuggingAPI() {
+    console.log("storedMediaDate = " + storedMediaDate);
+        console.log("dateNow = " + dateNow);
+        console.log("requestMade = "+requestMade);
+        console.log("requestUpdateRequired = " + requestUpdateRequired);
+        let testDate = new Date().toLocaleString("en-ZA", {timeZone: "America/New_York"});
+        console.log("testDate = " + testDate);
+}*/
