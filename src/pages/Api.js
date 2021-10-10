@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 export function Api() {
     const [isLoaded, setIsLoaded] = useState(false);
-    const [apiData, setApiData] = useState({url: ''}); //initialise url to empty string
+    const [apiData, setApiData] = useState({url: '', media_type: ''}); //initialise url to empty string
     const [isError, setIsError] = useState(false);
 
 
@@ -61,8 +61,7 @@ export function Api() {
             <p> Please try again later :) </p> 
             </div>
     );
-    } else if (apiData.url.includes("youtube")) {
-    } else if (apiData.url.includes("youtube") || apiData.url.includes("vimeo")) {
+    } else if (apiData.media_type === "video") {
         return ( 
             <div className = "apiContainer">
             <h2> { apiData.title } </h2>
