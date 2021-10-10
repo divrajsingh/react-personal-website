@@ -62,6 +62,7 @@ export function Api() {
             </div>
     );
     } else if (apiData.url.includes("youtube")) {
+    } else if (apiData.url.includes("youtube") || apiData.url.includes("vimeo")) {
         return ( 
             <div className = "apiContainer">
             <h2> { apiData.title } </h2>
