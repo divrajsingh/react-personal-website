@@ -1,18 +1,22 @@
 import React, {useRef} from 'react';
 import { Card } from '../components/Card';
-import {contentDXC, contentExp, contentSpec, contentTel} from "../Data"; 
+import {contentResMed, contentDXC, contentExp, contentSpec, contentTel} from "../Data"; 
 
 export function Experience() {
     
     const line1 = useRef();
     const line2 = useRef();
     const line3 = useRef();
+    const line4 = useRef();
 
     function handleClick(e) {
         //get content div
         let content = e.currentTarget.querySelector('.content');
         let currentLine = "";
         switch(e.currentTarget.id) {
+            case "Software Engineer": 
+                currentLine = line4;
+                break;
             case "Associate Application Developer": 
                 currentLine = line1;
                 break;
@@ -46,6 +50,10 @@ export function Experience() {
             <div className="timeline">
                 <span className="dot"></span>
                 <div className="space"></div>
+                <div ref={line4} className="line"></div>
+                <div className="space"></div>
+                <span className="dot"></span>
+                <div className="space"></div>
                 <div ref={line1} className="line"></div>
                 <div className="space"></div>
                 <span className="dot"></span>
@@ -60,9 +68,16 @@ export function Experience() {
             </div>
             <div className="cardContainer">
             <Card 
+                jobTitle="Software Engineer"
+                company="ResMed"
+                duration="June 2022 - Present"
+                content={contentResMed}
+                clickHandler = {handleClick}
+            />
+            <Card 
                 jobTitle="Associate Application Developer"
                 company="DXC Technology"
-                duration="Feb 2020 - Present"
+                duration="Feb 2020 - June 2022"
                 content={contentDXC}
                 clickHandler = {handleClick}
             />
