@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {About} from './pages/About';
 import {Api} from './pages/Api'; 
 import {Experience} from './pages/Experience';
 import {Skills} from './pages/Skills';
 import { Route, Redirect, withRouter, useLocation} from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group'
+import ReactGA from 'react-ga';
 
 function Main() {
     
@@ -15,6 +16,11 @@ function Main() {
         { path: '/api-page', name: 'Api', Component: Api },
       ]*/
     let location = useLocation(); 
+
+    useEffect(() => {
+        ReactGA.pageview(location.pathname + location.search);
+    }, [location]);
+
     return (
         <>   
             <Route exact path='/'>
