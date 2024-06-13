@@ -8,7 +8,7 @@ export function Api() {
 
     useEffect(() => {
         const abortController = new AbortController();
-        let API_KEY = import.meta.env.REACT_APP_API_KEY;
+        let API_KEY = import.meta.env.VITE_API_KEY;
         //console.log("api key is = " + API_KEY);
 
         //get media item from local storage 
