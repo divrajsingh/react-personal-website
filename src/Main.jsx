@@ -18,6 +18,7 @@ function Main() {
     let location = useLocation(); 
 
     useEffect(() => {
+        ReactGA.initialize('G-XBJM2EH07Q');
         ReactGA.pageview(location.pathname + location.search);
     }, [location]);
 

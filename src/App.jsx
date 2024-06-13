@@ -1,15 +1,10 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {BrowserRouter as Router} from 'react-router-dom'; 
 import {NavBar} from './components/navBar';
 import {Footer} from './components/Footer';
 import Main from './Main';
-import ReactGA from 'react-ga';
 
 function App() {
-  
-  useEffect(() => {
-    ReactGA.initialize('G-XBJM2EH07Q');
-  }, []);
 
   return (
     <>
