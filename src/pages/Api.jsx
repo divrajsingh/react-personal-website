@@ -76,7 +76,11 @@ export function Api() {
             <div className = "apiContainer" >
             <h2> { apiData.title } </h2> 
             <p> API - NASA's <a href="https://apod.nasa.gov/apod/" rel="noreferrer" target="_blank">Astronomy Picture of the Day</a>:</p> 
-            <img src = { apiData.url } alt = { apiData.title } /> 
+            {apiData.media_type === 'other' ? 
+                <p>Error loading because of an <a target="_blank" href="https://github.com/nasa/apod-api/issues/129">issue with APOD API</a></p>
+                :
+                <img src = { apiData.url } alt = { apiData.title } /> 
+            }
             </div>
         )
     }
